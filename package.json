@@ -1,0 +1,21 @@
+{
+  "name": "load-engine",
+  "version": "0.0.0",
+  "description": "Loads npm modules on demand (providing `npm` is installed globally)",
+  "main": "index.js",
+  "dependencies": {
+    "promise": "~1.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ForbesLindesay/load-engine.git"
+  },
+  "author": "ForbesLindesay",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "1816c0abbbd83862fdfb94f566354882b3cfd94e"
+}
