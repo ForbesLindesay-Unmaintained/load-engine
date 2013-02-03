@@ -3,6 +3,10 @@ var utils = require('../lib/utils');
 var assert = require('better-assert');
 var sinon = require('sinon');
 var Promise = require('promise');
+var wrench = require('wrench');
+var join = require('path').join;
+var fs = require('fs');
+
 function promise(val) {
   return new Promise(function (res) { res.fulfill(val); });
 }
@@ -217,3 +221,44 @@ describe('with `{repl: true}`', function () {
     })
   });
 });
+
+describe('utils.getModule', function () {
+  it('returns module if exists', function () {
+    assert(utils.getModule('better-assert') === assert);
+  });
+  it('throws otherwise', function () {
+    try {
+      utils.getModule('non-existant-module');
+    } catch (ex) {
+      return;
+    }
+    var ShouldNotGetHere = false;
+    assert(ShouldNotGetHere);
+  });
+});
+
+describe('utils.install', function () {
+  before(function () {
+    wrench.mkdirSyncRecursive(join(__dirname, 'fixture'));
+    fs.writeFileSync(join(__dirname, 'fixture', 'package.json'), JSON.stringify({}));
+  });
+
+  it('installs the module', function (done) {
+    this.slow(5000);
+    this.timeout(10000);
+    utils.install(['foo'], join(__dirname, 'fixture'))
+      .then(function () {
+        var packA = require('./fixture/package.json');
+        assert(typeof packA.dependencies === 'object');
+        assert(typeof packA.dependencies.foo === 'string');
+        assert(packA.dependencies.foo);
+        var packB = require('./fixture/node_modules/foo/package.json');
+        assert(typeof packB === 'object');
+        done();
+      }, done);
+  });
+
+  after(function () {
+    wrench.rmdirSyncRecursive(join(__dirname, 'fixture'));
+  });
+})

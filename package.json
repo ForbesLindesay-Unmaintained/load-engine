@@ -10,10 +10,12 @@
   "devDependencies": {
     "mocha": "*",
     "sinon": "*",
-    "better-assert": "*"
+    "better-assert": "*",
+    "wrench": "~1.4.4"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec test/unit-tests",
+    "test-manual": "mocha -R spec test/utils.ask"
   },
   "repository": {
     "type": "git",
