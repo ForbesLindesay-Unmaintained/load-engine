@@ -2,13 +2,18 @@
   "name": "load-engine",
   "version": "0.0.0",
   "description": "Loads npm modules on demand (providing `npm` is installed globally)",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "dependencies": {
-    "promise": "~1.3.0"
+    "promise": "~1.3.0",
+    "debug": "~0.7.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "sinon": "*",
+    "better-assert": "*"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",
