@@ -22,7 +22,5 @@
     "url": "https://github.com/ForbesLindesay/load-engine.git"
   },
   "author": "ForbesLindesay",
-  "license": "MIT",
-  "readmeFilename": "README.md",
-  "gitHead": "1816c0abbbd83862fdfb94f566354882b3cfd94e"
+  "license": "MIT"
 }

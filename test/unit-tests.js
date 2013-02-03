@@ -240,7 +240,7 @@ describe('utils.getModule', function () {
 describe('utils.install', function () {
   before(function () {
     wrench.mkdirSyncRecursive(join(__dirname, 'fixture'));
-    fs.writeFileSync(join(__dirname, 'fixture', 'package.json'), JSON.stringify({}));
+    fs.writeFileSync(join(__dirname, 'fixture', 'package.json'), JSON.stringify({name: 'bar', version: '0.0.0'}));
   });
 
   it('installs the module', function (done) {
