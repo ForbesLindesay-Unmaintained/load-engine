@@ -1,8 +1,6 @@
 var utils = require('../lib/utils');
 var assert = require('better-assert');
 
-var parentPath = require('path').join(__dirname, '..', '..', '..');
-
 require('./unit-tests');
 
 describe('utils.ask', function () {
