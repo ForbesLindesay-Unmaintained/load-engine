@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ForbesLindesay/load-engine.png?branch=master)](https://travis-ci.org/ForbesLindesay/load-engine)
+[![Build Status](https://img.shields.io/travis/ForbesLindesay/load-engine/master.svg)](https://travis-ci.org/ForbesLindesay/load-engine)
 
 # load-engine
 
