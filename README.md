@@ -2,6 +2,8 @@
 
 # load-engine
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/ForbesLindesay/load-engine.svg)](https://greenkeeper.io/)
+
   Load in engines for `transformers` asyncronously.  This can also be used to load other npm modules.
 
 ## Usage
